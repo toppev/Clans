@@ -1,0 +1,7 @@
+version: 0.1
+name: Clans
+main: com.gmail.thetoppe5.clans.Clans
+description: A simple clans plugin
+commands:
+  clan:
+    aliases: [cl, c, clans]

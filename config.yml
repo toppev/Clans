@@ -1,0 +1,7 @@
+prefix: '&6[&7Clans&6] '
+clan-worlds:
+  - world
+  - clanWorld2
+clan-chat-format: '&b[ClanChat] <player>: &7<message>'
+teleport-delay: 5
+show-clan-base: true
