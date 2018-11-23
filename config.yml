@@ -7,3 +7,5 @@ teleport-delay: 5
 show-clan-base: true
 #in minutes
 clan-auto-save-period: 20
+#should op's be notified of new updates
+notify-updates: true
