@@ -11,24 +11,23 @@ import com.gmail.thetoppe5.clans.Clans;
 
 public class DelayedActionListener implements Listener {
 
+    private Clans plugin;
 
-	private Clans plugin;
+    public DelayedActionListener(Clans plugin) {
+        this.plugin = plugin;
+    }
 
-	public DelayedActionListener(Clans plugin) {
-		this.plugin = plugin;
-	}
-
-	@EventHandler(ignoreCancelled=true, priority=EventPriority.MONITOR)
-	public void onDamage(EntityDamageEvent e) {
-		if ((e.getEntity() instanceof Player)) {
-			Player p = (Player)e.getEntity();
-			MetadataValue m = this.plugin.getMetadata(p, DelayedTeleport.TELEPORT_ACTION);
-			if ((m != null) && (m.value() != null) && ((m.value() instanceof DelayedTeleport))) {
-				DelayedTeleport dt = (DelayedTeleport)m.value();
-				p.removeMetadata(DelayedTeleport.TELEPORT_ACTION, this.plugin);
-				this.plugin.sendMessage(p, "teleport-cancelled");
-				dt.cancel();
-			}
-		}
-	}
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+    public void onDamage(EntityDamageEvent e) {
+        if ((e.getEntity() instanceof Player)) {
+            Player p = (Player) e.getEntity();
+            MetadataValue m = this.plugin.getMetadata(p, DelayedTeleport.TELEPORT_ACTION);
+            if ((m != null) && (m.value() != null) && ((m.value() instanceof DelayedTeleport))) {
+                DelayedTeleport dt = (DelayedTeleport) m.value();
+                p.removeMetadata(DelayedTeleport.TELEPORT_ACTION, this.plugin);
+                this.plugin.sendMessage(p, "teleport-cancelled");
+                dt.cancel();
+            }
+        }
+    }
 }
