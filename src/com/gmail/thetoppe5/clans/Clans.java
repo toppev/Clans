@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 
-import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -20,6 +19,7 @@ import com.gmail.thetoppe5.clans.clan.ClanCommand;
 import com.gmail.thetoppe5.clans.clan.ClanListener;
 import com.gmail.thetoppe5.clans.util.DelayedActionListener;
 import com.gmail.thetoppe5.clans.util.MessagesFileManager;
+import com.gmail.thetoppe5.clans.util.UpdateNotifier;
 
 public class Clans extends JavaPlugin {
 
@@ -63,6 +63,7 @@ public class Clans extends JavaPlugin {
             }
             new ClanAutoSave(this, autoSaveDelay);
         }
+        new UpdateNotifier(this, 43640, getConfig().getBoolean("notify-updates"));
     }
 
     @Override
