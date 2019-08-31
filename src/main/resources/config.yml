@@ -1,0 +1,11 @@
+prefix: '&6[&7Clans&6] '
+clan-worlds:
+  - world
+  - clanWorld2
+clan-chat-format: '&b[ClanChat] <player>: &7<message>'
+teleport-delay: 5
+show-clan-base: true
+#in minutes
+clan-auto-save-period: 20
+#should op's be notified of new updates
+notify-updates: true
